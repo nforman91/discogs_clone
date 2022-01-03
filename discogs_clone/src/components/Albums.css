@@ -1,0 +1,16 @@
+.albums-container {
+  display: flex;
+  flex-direction: row;
+  width: 20em;
+}
+
+.album {
+  border: 1px solid black;
+  height: 10em;
+  width: 10em;
+  margin: 1em;
+}
+
+.album-details {
+  margin-left: 1em;
+}

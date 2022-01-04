@@ -80,15 +80,15 @@ class Dropdown extends React.Component {
                 </button>
                 <div className='dropdown-content hide-btn' id='dd-content'>
                     <a 
-                        href='#' 
+                        href='#artist' 
                         onClick={this.sortByArtist}
                     >Artist</a>
                     <a 
-                        href='#'
+                        href='#albumTitle'
                         onClick={this.sortByAlbumTitle}
                     >Album Title</a>
                     <a 
-                        href='#'
+                        href='#year'
                         onClick={this.sortByYear}
                     >Year</a>
                 </div>

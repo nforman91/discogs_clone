@@ -31,9 +31,9 @@ class Albums extends React.Component {
                                 <div className='album-image'>
                                 </div>
                                 <div className='album-details'>
-                                    <p>{`Artist: ${album.artist}`}</p>
-                                    <p>{`Album Title: ${album.albumTitle}`}</p>
-                                    <p>{`Year: ${album.year}`}</p>
+                                    <p id='artist'>{`Artist: ${album.artist}`}</p>
+                                    <p id='albumTitle'>{`Album Title: ${album.albumTitle}`}</p>
+                                    <p id='year'>{`Year: ${album.year}`}</p>
                                 </div>
                             </div>
                         )

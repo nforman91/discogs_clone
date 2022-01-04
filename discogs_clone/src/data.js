@@ -2,7 +2,7 @@ const data = [
     {
         id: 1,
         artist: 'Abraham Singer',
-        albumTitle: 'Best Album Evenr',
+        albumTitle: 'Best Album Ever',
         year: 2020
     },
     {

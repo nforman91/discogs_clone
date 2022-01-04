@@ -1,0 +1,13 @@
+.nav-button {
+  height: 100%;
+  width: 10em;
+  margin-left: 2em;
+  background-color: black;
+  color: white;
+  border: none;
+}
+
+.nav-button:hover {
+  opacity: 50%;
+  cursor: pointer;
+}

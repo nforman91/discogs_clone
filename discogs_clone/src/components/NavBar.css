@@ -1,11 +1,24 @@
 .navbar-container {
   background-color: black;
+  opacity: 80%;
   width: 100%;
-  height: 5em;
+  height: 3em;
   margin-bottom: 1em;
+  display: flex;
+  flex-direction: row;
 }
 
 .page-title {
   color: white;
   padding: 1em;
+}
+
+.page-title:hover {
+  cursor: pointer;
+}
+
+.search-bar {
+  height: 1em;
+  width: 15em;
+  margin-top: 1em;
 }

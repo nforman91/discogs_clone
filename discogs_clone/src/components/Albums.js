@@ -20,17 +20,17 @@ class Albums extends React.Component {
     // .catch(err => {
     //     console.log(err)
     // })
-    
+
     render(){
         return (
             <section className='albums-container'>
                 {
                     this.props.releases.map(album => {
                         return (
-                            <div className='album-container'>
+                            <div className='album-container' key={album.id}>
                                 <div className='album-image'>
                                 </div>
-                                <div key={album.id} className='album-details'>
+                                <div className='album-details'>
                                     <p>{`Artist: ${album.artist}`}</p>
                                     <p>{`Album Title: ${album.albumTitle}`}</p>
                                     <p>{`Year: ${album.year}`}</p>

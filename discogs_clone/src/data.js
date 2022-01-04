@@ -1,21 +1,21 @@
 const data = [
     {
         id: 1,
-        artist: 'Applebee McGee',
-        albumTitle: 'Example Album',
-        year: 1924
+        artist: 'Abraham Singer',
+        albumTitle: 'Best Album Evenr',
+        year: 2020
     },
     {
         id: 2,
-        artist: 'Tom Waits',
-        albumTitle: 'Small Change',
-        year: 1976
+        artist: 'Catherine Drummer',
+        albumTitle: 'Catherine and the Beat',
+        year: 2021
     },
     {
         id: 3,
-        artist: 'Moor Mother',
-        albumTitle: 'Black Encyclopedia of the Air',
-        year: 2021
+        artist: 'Billy Guitarist',
+        albumTitle: 'Absolutely Amazing',
+        year: 2022
     },
 ]
 

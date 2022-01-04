@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import data from '../data';
+import Albums from './Albums';
 import './Dropdown.css';
 
-const Dropdown = () => {
-    const [releases, setReleases] = useState(data)
+class Dropdown extends React.Component {
+    state = {
+        releases: data
+    }
 
-    const showOptions = () => {
+    showOptions = () => {
         document.getElementById('dd-content').classList.toggle('hide-btn');
     }
 
@@ -16,10 +19,10 @@ const Dropdown = () => {
     //     }
     // })
 
-    const sortByArtist = (e) => {
+    sortByArtist = (e) => {
         e.preventDefault();
-        setReleases(
-            releases.sort(function(a,b) {
+        this.setState({
+            releases: data.sort(function(a,b) {
                 let aArtist = a.artist.toLowerCase();
                 let bArtist = b.artist.toLowerCase();
                 if(aArtist > bArtist){
@@ -30,64 +33,70 @@ const Dropdown = () => {
                     return 0;
                 }
             })
-        )
-        document.getElementById('dd-content').classList.toggle('hide-btn');
-        console.log('ARTIST SORT', releases)
-    }
-
-    const sortByAlbumTitle = (e) => {
-        e.preventDefault();
-        releases.sort(function(a,b) {
-            let aAlbumTitle = a.albumTitle.toLowerCase();
-            let bAlbumTitle = b.albumTitle.toLowerCase();
-            if(aAlbumTitle > bAlbumTitle){
-                return 1;
-            } else if(aAlbumTitle < bAlbumTitle){
-                return -1;
-            } else {
-                return 0;
-            }
         })
         document.getElementById('dd-content').classList.toggle('hide-btn');
-        console.log('ALBUM TITLE SORT', releases)
     }
 
-    const sortByYear = (e) => {
+    sortByAlbumTitle = (e) => {
         e.preventDefault();
-        releases.sort(function(a,b) {
-            if(a.year > b.year){
-                return 1;
-            } else if(a.year < b.year){
-                return -1;
-            } else {
-                return 0;
-            }
+        this.setState({
+            releases: data.sort(function(a,b) {
+                let aAlbumTitle = a.albumTitle.toLowerCase();
+                let bAlbumTitle = b.albumTitle.toLowerCase();
+                if(aAlbumTitle > bAlbumTitle){
+                    return 1;
+                } else if(aAlbumTitle < bAlbumTitle){
+                    return -1;
+                } else {
+                    return 0;
+                }
+            })
         })
         document.getElementById('dd-content').classList.toggle('hide-btn');
-        console.log('YEAR SORT', releases)
     }
 
+    sortByYear = (e) => {
+        e.preventDefault();
+        this.setState({
+            releases: data.sort(function(a,b) {
+                if(a.year > b.year){
+                    return 1;
+                } else if(a.year < b.year){
+                    return -1;
+                } else {
+                    return 0;
+                }
+            })
+        })
+        document.getElementById('dd-content').classList.toggle('hide-btn');
+    }
+
+    render(){
         return (
-        <div className='dropdown-container'>
-            <button className='dropdown-btn' onClick={showOptions}>Sort By
-                <img className='down-arrow' alt='down arrow' src='https://cdn-icons-png.flaticon.com/512/60/60781.png'/>
-            </button>
-            <div className='dropdown-content hide-btn' id='dd-content'>
-                <a 
-                    href='#' 
-                    onClick={sortByArtist}
-                >Artist</a>
-                <a 
-                    href='#'
-                    onClick={sortByAlbumTitle}
-                >Album Title</a>
-                <a 
-                    href='#'
-                    onClick={sortByYear}
-                >Year</a>
+        <div>
+            <div className='dropdown-container'>
+                <button className='dropdown-btn' onClick={this.showOptions}>Sort By
+                    <img className='down-arrow' alt='down arrow' src='https://cdn-icons-png.flaticon.com/512/60/60781.png'/>
+                </button>
+                <div className='dropdown-content hide-btn' id='dd-content'>
+                    <a 
+                        href='#' 
+                        onClick={this.sortByArtist}
+                    >Artist</a>
+                    <a 
+                        href='#'
+                        onClick={this.sortByAlbumTitle}
+                    >Album Title</a>
+                    <a 
+                        href='#'
+                        onClick={this.sortByYear}
+                    >Year</a>
+                </div>
             </div>
+            <Albums releases={this.state.releases}/>
         </div>
         )
+    }
 }
 
 export default Dropdown;
